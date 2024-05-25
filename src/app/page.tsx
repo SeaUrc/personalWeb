@@ -1,8 +1,24 @@
 import Link from "next/link";
 
+const images = [
+  "https://utfs.io/f/fd7526e3-174b-407b-a802-7cfdf1f5b0df-nm33wo.jpeg",
+];
+
+const profilePic = images.map((url, index) => ({
+  id: index+1,
+  url,
+}));
+
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
+    <main className="">
+      <div className="flex"> 
+        {profilePic.map((profilePic) => (
+          <div key={profilePic.id} className="w-1/2 p-2">
+            <img src={profilePic.url} />
+          </div>
+        ))}
+      </div>
       lucas the dawg
     </main>
   );
