@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { headers } from "next/headers";
 import { db } from "~/server/db";
 
 const images = [
@@ -10,7 +10,10 @@ const profilePic = images.map((url, index) => ({
   url,
 }));
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
+  headers();
   const posts = await db.query.posts.findMany();
   console.log(posts);
 
@@ -18,17 +21,17 @@ export default async function HomePage() {
     <main className="">
       <div className="flex"> 
         {posts.map((post) => (
-          <div key={post.id} className="w-1/2 p-2">
+          <div key={post.id} className="w-48 p-4">
             {post.name}
           </div>
         ))}
         {profilePic.map((profilePic) => (
-          <div key={profilePic.id} className="w-1/2 p-2">
+          <div key={profilePic.id} className="w-48 p-4">
             <img src={profilePic.url} />
           </div>
         ))}
       </div>
-      lucas the dawg
+      lucas fasdfasdf
     </main>
   );
 }
