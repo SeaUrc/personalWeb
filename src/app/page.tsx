@@ -1,16 +1,26 @@
 import { headers } from "next/headers";
 import { db } from "~/server/db";
 import {SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
-import { Sign } from "crypto";
-
+import { getMyImages } from "~/server/queries";
 
 export const dynamic = "force-dynamic";
 
+async function Images() {
+  const images = await getMyImages()
+  return(
+    <div className="flex flex-wrap gap-4">
+      {images.map((image) => (
+        <div key={image.id} className="flex flex-col w-64">
+          <img src={image.url} />
+          <div>{image.name}</div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 export default async function HomePage() {
   headers();
-  const images = await db.query.images.findMany({
-    orderBy: (model, {desc}) => desc(model.id),
-  });
 
   return (
     <main className="">
@@ -18,14 +28,7 @@ export default async function HomePage() {
         <SignedOut><SignInButton /></SignedOut>
         <SignedIn><UserButton /></SignedIn>
       </div>
-      <div className="flex flex-wrap gap-4">
-        {images.map((image) => (
-          <div key={image.id} className="flex flex-col w-64">
-            <img src={image.url} />
-            <div>{image.name}</div>
-          </div>
-        ))}
-      </div>
+      <Images />
       lucas fasdfasdf
     </main>
   );
