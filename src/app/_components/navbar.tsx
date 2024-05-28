@@ -13,24 +13,27 @@ export default function SideBar() {
         }
     }
     return (
-        <div className="bg-black text-white flex">
+        <div className="bg-black text-white">
             <div
-                className={"translate-x-0 fixed inset-y-0 left-0 w-64 bg-gray-900 transition duration-300 ease-in-out z-50"}
+                className={"flex justify-center translate-x-0 fixed inset-y-0 bg-gray-900"}
             >
                 <div className="px-4 py-6">
                     <div className="flex flex-row items-center mb-8">
                         <Link className="flex m-4"href="/">
-                            <h1 className="text-2xl font-bold">Nicholas Song</h1>
+                            <h1 className="text-5xl font-bold">Nicholas Song</h1>
                         </Link>
-                        <Image
-                            src="/github-mark-white.svg"
-                            alt="GitHub Logo"
-                            width={24}
-                            height={24}
-                            className="flex w-8 h-8 m-4"
-                        />
+                        <a href="https://github.com/SeaUrc" target="_blank">
+                            <Image
+                                src="/github-mark-white.svg"
+                                alt="GitHub Logo"
+                                width={24}
+                                height={24}
+                                className="flex w-8 h-8 m-4"
+                            />
+                        </a>
+                        
                     </div>
-                    <nav>
+                    <nav className="text-2xl">
                         <ul>
                             <li>
                                 <button
