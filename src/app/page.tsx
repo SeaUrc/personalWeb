@@ -2,16 +2,45 @@
 import { db } from "~/server/db";
 import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 import SideBar from "./_components/navbar";
+import { useEffect, useState } from 'react';
 
 export const dynamic = "force-dynamic";
 
+export default function HomePage() {
+  const [activeSection, setActiveSection] = useState('about');
 
-export default async function HomePage() {
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['about', 'projects', 'contact'];
+      const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 
-  const handleNavClick = (sectionId: string) => {
+      sections.forEach((section) => {
+        const sectionElement = document.getElementById(section);
+        if (sectionElement) {
+          const offsetTop = sectionElement.offsetTop - 100; // Adjust the offset as needed
+          const offsetBottom = offsetTop + sectionElement.offsetHeight;
+
+          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+            setActiveSection(section);
+          }
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleNavClick = (sectionId:string) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
+      });
     }
   };
 
@@ -26,35 +55,51 @@ export default async function HomePage() {
             <h2 className="text-3xl font-bold text-white mt-3">
               Software Developer
             </h2>
-            <p className="mt-4">
-              blah blah blah
-            </p>
+            <p className="mt-4">blah blah blah</p>
             {/* Add additional header content here */}
             <nav className="">
-              <ul className="mt-16 w-max flex flex-col items-end">
-                <li className="py-2">
+              <ul className="mt-16 w-max flex flex-col items-start">
+                <li className="py-2 relative left-6">
+                  <div
+                    className={`absolute -left-6 top-1/2 h-1 w-6 bg-white transition-all duration-300 ${
+                      activeSection === 'about' ? 'w-6' : 'w-10'
+                    }`}
+                  ></div>
                   <a
-                    href="#about"
                     onClick={() => handleNavClick('about')}
-                    className="text-white hover:text-gray-400 transition-colors duration-300"
+                    className={`group flex items-center pl-3 py-3 transition-colors duration-300 ${
+                      activeSection === 'about' ? 'text-white font-bold' : 'text-gray-400'
+                    }`}
                   >
                     About
                   </a>
                 </li>
-                <li className="py-2">
+                <li className="py-2 relative left-6">
+                  <div
+                    className={`absolute -left-6 top-1/2 h-1 w-6 bg-white transition-all duration-300 ${
+                      activeSection === 'projects' ? 'w-6' : 'w-10'
+                    }`}
+                  ></div>
                   <a
-                    href="#projects"
                     onClick={() => handleNavClick('projects')}
-                    className="text-white hover:text-gray-400 transition-colors duration-300"
+                    className={`group flex items-center pl-3 py-3 transition-colors duration-300 ${
+                      activeSection === 'projects' ? 'text-white font-bold' : 'text-gray-400'
+                    }`}
                   >
                     Projects
                   </a>
                 </li>
-                <li className="py-2">
+                <li className="py-2 relative left-6">
+                  <div
+                    className={`absolute -left-6 top-1/2 h-1 w-6 bg-white transition-all duration-300 ${
+                      activeSection === 'contact' ? 'w-6' : 'w-10'
+                    }`}
+                  ></div>
                   <a
-                    href="#contact"
                     onClick={() => handleNavClick('contact')}
-                    className="text-white hover:text-gray-400 transition-colors duration-300"
+                    className={`group flex items-center pl-3 py-3 transition-colors duration-300 ${
+                      activeSection === 'contact' ? 'text-white font-bold' : 'text-gray-400'
+                    }`}
                   >
                     Contact
                   </a>
@@ -76,6 +121,5 @@ export default async function HomePage() {
         </div>
       </main>
     </div>
-
   );
 }
