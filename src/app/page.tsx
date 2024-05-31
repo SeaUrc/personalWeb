@@ -1,13 +1,15 @@
 'use client';
 import { db } from "~/server/db";
 import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
-import SideBar from "./_components/navbar";
 import { useEffect, useState } from 'react';
+
+// use inter family font
 
 export const dynamic = "force-dynamic";
 
 export default function HomePage() {
   const [activeSection, setActiveSection] = useState('about');
+  const [hoverSection, setHoverSection] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,7 +35,7 @@ export default function HomePage() {
     };
   }, []);
 
-  const handleNavClick = (sectionId:string) => {
+  const handleNavClick = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({
@@ -59,47 +61,51 @@ export default function HomePage() {
             {/* Add additional header content here */}
             <nav className="">
               <ul className="mt-16 w-max flex flex-col items-start">
-                <li className="py-2 relative left-6">
+                <li
+                  className="py-2 relative left-6"
+                  onMouseEnter={() => setHoverSection("about")}
+                  onMouseLeave={() => setHoverSection("")}
+                >
                   <div
-                    className={`absolute -left-6 top-1/2 h-1 w-6 bg-white transition-all duration-300 ${
-                      activeSection === 'about' ? 'w-6' : 'w-10'
-                    }`}
+                    className={`absolute -left-6 top-1/2 h-[2px] bg-white transition-all duration-300 ${(activeSection === 'about' || hoverSection === "about") ? 'w-12' : 'w-6'
+                      }`}
                   ></div>
                   <a
                     onClick={() => handleNavClick('about')}
-                    className={`group flex items-center pl-3 py-3 transition-colors duration-300 ${
-                      activeSection === 'about' ? 'text-white font-bold' : 'text-gray-400'
-                    }`}
+                    className={`group flex items-center pl-3 py-3 transition-all duration-300 ${(activeSection === 'about' || hoverSection === "about") ? 'text-white ml-6' : 'text-gray-400'
+                      }`}
                   >
                     About
                   </a>
                 </li>
-                <li className="py-2 relative left-6">
+                <li className="py-2 relative left-6"
+                  onMouseEnter={() => setHoverSection("projects")}
+                  onMouseLeave={() => setHoverSection("")}
+                >
                   <div
-                    className={`absolute -left-6 top-1/2 h-1 w-6 bg-white transition-all duration-300 ${
-                      activeSection === 'projects' ? 'w-6' : 'w-10'
-                    }`}
+                    className={`absolute -left-6 top-1/2 h-[2px] bg-white transition-all duration-300 ${(activeSection === 'projects' || hoverSection === "projects") ? 'w-12' : 'w-6'
+                      }`}
                   ></div>
                   <a
                     onClick={() => handleNavClick('projects')}
-                    className={`group flex items-center pl-3 py-3 transition-colors duration-300 ${
-                      activeSection === 'projects' ? 'text-white font-bold' : 'text-gray-400'
-                    }`}
+                    className={`group flex items-center pl-3 py-3 transition-all duration-300 ${(activeSection === 'projects' || hoverSection === "projects") ? 'text-white ml-6' : 'text-gray-400'
+                      }`}
                   >
                     Projects
                   </a>
                 </li>
-                <li className="py-2 relative left-6">
+                <li className="py-2 relative left-6"
+                  onMouseEnter={() => setHoverSection("contact")}
+                  onMouseLeave={() => setHoverSection("")}
+                >
                   <div
-                    className={`absolute -left-6 top-1/2 h-1 w-6 bg-white transition-all duration-300 ${
-                      activeSection === 'contact' ? 'w-6' : 'w-10'
-                    }`}
+                    className={`absolute -left-6 top-1/2 h-[2px] bg-white transition-all duration-300 ${(activeSection === 'contact' || hoverSection === "contact") ? 'w-12' : 'w-6'
+                      }`}
                   ></div>
                   <a
                     onClick={() => handleNavClick('contact')}
-                    className={`group flex items-center pl-3 py-3 transition-colors duration-300 ${
-                      activeSection === 'contact' ? 'text-white font-bold' : 'text-gray-400'
-                    }`}
+                    className={`group flex items-center pl-3 py-3 transition-all duration-300 ${(activeSection === 'contact' || hoverSection === "contact") ? 'text-white ml-6' : 'text-gray-400'
+                      }`}
                   >
                     Contact
                   </a>
