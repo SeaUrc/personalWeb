@@ -1,5 +1,4 @@
 'use client';
-import { db } from "~/server/db";
 import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 import { useEffect, useState } from 'react';
 import Image from "next/image";
@@ -10,7 +9,6 @@ import About from "~/app/_components/about";
 import Education from "./_components/education";
 import Projects from "./_components/projects";
 
-export const dynamic = "force-dynamic";
 
 export default function HomePage() {
   return (

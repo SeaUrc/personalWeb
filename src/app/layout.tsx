@@ -1,6 +1,5 @@
 import "~/styles/globals.css";
 
-import {ClerkProvider} from "@clerk/nextjs";
 
 import { GeistSans } from "geist/font/sans";
 
@@ -16,10 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
       <html lang="en" className={`${GeistSans.variable} scroll-behavior: smooth`}>
         <body>{children}</body>
       </html>
-    </ClerkProvider>
   );
 }
