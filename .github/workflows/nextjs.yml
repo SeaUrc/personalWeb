@@ -46,8 +46,8 @@ jobs:
             exit 0
           elif [ -f "${{ github.workspace }}/package-lock.json" ]; then
             echo "manager=npm" >> $GITHUB_OUTPUT
-            echo "command=ci" >> $GITHUB_OUTPUT
-            echo "runner=npx --no-install" >> $GITHUB_OUTPUT
+            echo "command=ci" >> $GITHUB OUTPUT
+            echo "runner=npx --no-install" >> $GITHUB OUTPUT
             exit 0
           else
             echo "Unable to determine package manager"
@@ -60,7 +60,9 @@ jobs:
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Install pnpm
         if: steps.detect-package-manager.outputs.manager == 'pnpm'
-        run: npm install -g pnpm
+        run: |
+          npm install -g pnpm
+          export PATH="$(npm bin -g):$PATH"
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
