@@ -8,6 +8,10 @@ export default {
       fontFamily: {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
       },
+      screens: {
+        'aspect-ratio-wide': {'raw': '(min-aspect-ratio: 1/1)'},
+        'aspect-ratio-tall': {'raw': '(max-aspect-ratio: 1/1)'},
+      }
     },
   },
   plugins: [],
