@@ -27,6 +27,6 @@ jobs:
       - name: Create .nojekyll
         run: touch ./out/.nojekyll
       - name: Deploy
-        uses: SeaUrc/github-pages-deploy-action@v4
+        uses: SeaUrc/SeaUrc.github.io
         with:
           folder: out
