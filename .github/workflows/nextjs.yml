@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
@@ -25,12 +25,18 @@ jobs:
     - name: Install dependencies
       run: pnpm install
 
-    - name: Verify environment variable
-      run: echo $POSTGRES_URL
-      env:
-        POSTGRES_URL: ${{ secrets.POSTGRES_URL }}
-
     - name: Build the project
       env:
         POSTGRES_URL: ${{ secrets.POSTGRES_URL }}
       run: pnpm run build
+
+    - name: Export the static site
+      env:
+        POSTGRES_URL: ${{ secrets.POSTGRES_URL }}
+      run: pnpm run export
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./out
