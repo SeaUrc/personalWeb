@@ -16,6 +16,9 @@ const config = {
     },
     output: "export",
     reactStrictMode: true,
+    env: {
+        POSTGRES_URL: process.env.POSTGRES_URL,
+    },
 };
 
 export default config;
