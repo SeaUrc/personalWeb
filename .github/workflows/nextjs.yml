@@ -30,11 +30,6 @@ jobs:
         POSTGRES_URL: ${{ secrets.POSTGRES_URL }}
       run: pnpm run build
 
-    - name: Export the static site
-      env:
-        POSTGRES_URL: ${{ secrets.POSTGRES_URL }}
-      run: pnpm run export
-
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
