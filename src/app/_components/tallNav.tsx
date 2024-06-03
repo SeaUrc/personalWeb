@@ -30,7 +30,7 @@ export default function TallNav() {
           <li>
             <a href="https://www.linkedin.com/in/nicholas-song-1601251b1/" target="_blank" rel="noopener noreferrer" className="group text-gray-400 hover:text-white transition-colors duration-300">
               <Image
-                src="/In-White-128.png"
+                src="/icons8-linkedin.svg"
                 alt="LinkedIn Logo"
                 width={24}
                 height={24}
