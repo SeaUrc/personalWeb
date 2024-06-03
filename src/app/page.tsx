@@ -1,8 +1,4 @@
 'use client';
-import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
-import { useEffect, useState } from 'react';
-import Image from "next/image";
-
 import WideNav from "~/app/_components/wideNav";
 import TallNav from "~/app/_components/tallNav";
 import About from "~/app/_components/about";
