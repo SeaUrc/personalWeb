@@ -5,7 +5,6 @@ import About from "~/app/_components/about";
 import Education from "./_components/education";
 import Projects from "./_components/projects";
 
-
 export default function HomePage() {
   return (
     <div>
