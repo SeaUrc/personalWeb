@@ -20,13 +20,13 @@ jobs:
         env:
           BASE_PATH: /react-texteditor-example
         run: |
-          echo "" > .env.local
-          echo BASE_PATH=$BASE_PATH >> .env.local
+          echo "" > ./src/env.js
+          echo BASE_PATH=$BASE_PATH >> ./src/env.js
       - name: Build
         run: pnpm run build
       - name: Create .nojekyll
         run: touch ./out/.nojekyll
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: SeaUrc/github-pages-deploy-action@v4
         with:
           folder: out
