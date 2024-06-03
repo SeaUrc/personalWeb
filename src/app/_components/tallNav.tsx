@@ -44,7 +44,7 @@ export default function TallNav() {
                 src="/Gmail_Logo_White.svg"
                 alt="Instagram Logo"
                 width={24}
-                height={24}
+                height={24} 
                 className="w-8 h-8 opacity-70 transition-all duration-300 group-hover:opacity-100"
               />
             </a>
