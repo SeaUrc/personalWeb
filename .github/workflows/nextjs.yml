@@ -25,6 +25,11 @@ jobs:
     - name: Install dependencies
       run: pnpm install
 
+    - name: Verify environment variable
+      run: echo $POSTGRES_URL
+      env:
+        POSTGRES_URL: ${{ secrets.POSTGRES_URL }}
+
     - name: Build the project
       env:
         POSTGRES_URL: ${{ secrets.POSTGRES_URL }}
