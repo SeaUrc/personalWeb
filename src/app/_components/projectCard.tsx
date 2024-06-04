@@ -12,7 +12,7 @@ export default function ProjectCard(props: { startDate: string, endDate: string,
                     </div>
                     <div className="mt-4 text-gray-400">
                         {props.description}
-                    </div> 
+                    </div>
                     <div>
                         <ul className="flex flex-row flex-wrap mt-4 -ml-3">
                             {props.techs.map((tech, ind) => {
