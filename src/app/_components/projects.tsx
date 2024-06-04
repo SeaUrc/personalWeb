@@ -23,7 +23,7 @@ export default function Projects() {
                         href="https://seaurc.github.io/"
                         techs={["Nextjs", "Tailwind", "Typescript"]}
                     />
-                </li>
+                </li> 
                 <li>
                     <ProjectCard
                         startDate="2022"
