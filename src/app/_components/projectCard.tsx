@@ -1,6 +1,7 @@
-export default function ProjectCard(props: { startDate: string, endDate: string, title: string, description: string, href: string, techs: string[] }) {
+export default function ProjectCard(props: { startDate: string, endDate: string, title: string, description: string, techs: string[], href?: string }) {
+
     return (
-        <a href={props.href} target="_blank" rel="noreferrer">
+        <a href={props.href} target="_blank" rel="noopener noreferrer">
             <div className="flex flex-row px-5 py-10 hover:bg-gray-600 transition-all rounded-lg">
                 <div className="w-1/4 text-gray-400 mr-3">
                     {props.startDate + " - " + props.endDate}

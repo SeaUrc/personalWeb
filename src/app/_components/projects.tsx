@@ -7,53 +7,53 @@ export default function Projects() {
                 <li>
                     <ProjectCard
                         startDate="2022"
-                        endDate="2022"
-                        title="Project 1"
-                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor."
-                        href="https://www.google.com"
-                        techs={["React", "Next.js", "Tailwind CSS", "tester"]}
+                        endDate="Present"
+                        title="WebRobot"
+                        description="Doing research in program synthesis and web automation. Migrated existing WebRobot to MV3. Added additional capability for multiple windows. (Links to paper before I was handed project)."
+                        href="https://web.eecs.umich.edu/~xwangsd/pubs/pldi22.pdf"
+                        techs={["React", "Typescript", "Chrome Web Extensions"]}
+                    />
+                </li>
+                <li>
+                    <ProjectCard
+                        startDate="2024"
+                        endDate="2024"
+                        title="Personal Website"
+                        description="The website your currently on. Made with Next and Tailwind. Hosted on Vercel and Github Pages."
+                        href="https://seaurc.github.io/"
+                        techs={["Nextjs", "Tailwind", "Typescript"]}
+                    />
+                </li>
+                <li>
+                    <ProjectCard
+                        startDate="2022"
+                        endDate="2023"
+                        title="Geoguessr CNN"
+                        description="Gathering data to train a CNN to output latitude and longitude based on an image of the location. Preprocessed data using Pillow and NumPy. Implemented and trained a CNN using Python, NumPy, and TensorFlow."
+                        techs={["Python", "Numpy", "Selenium", "Tensorflow"]}
                     />
                 </li>
                 <li>
                     <ProjectCard
                         startDate="2022"
                         endDate="2022"
-                        title="Project 1"
-                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor."
-                        href="https://www.google.com"
-                        techs={["React", "Next.js", "Tailwind CSS", "tester", "lucas", "tester", "nick", "tester"]}
+                        title="ResNet-50 Implementation"
+                        description="Implemented the ResNet-50 CNN architecture in Tensorflow. Trained the CNN on the ImageNet test."
+                        techs={["Python", "Numpy", "Tensorflow"]}
                     />
                 </li>
                 <li>
                     <ProjectCard
                         startDate="2022"
                         endDate="2022"
-                        title="Project 1"
-                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor."
-                        href="https://www.google.com"
-                        techs={["React"]}
+                        title="U-Net Implementation"
+                        description="Implemented the U-Net architecture to generate masks on cat and dog pictures in TensorFlow. Achieved roughly 92% precision and 94% recall."
+                        techs={["Python", "Numpy", "Tensorflow"]}
                     />
                 </li>
-                <li>
-                    <ProjectCard
-                        startDate="2022"
-                        endDate="2022"
-                        title="Project 1"
-                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor."
-                        href="https://www.google.com"
-                        techs={["React", "Next.js", "Tailwind CSS", "tester", "tester", "tester", "tester", "tester"]}
-                    />
-                </li>
-                <li>
-                    <ProjectCard
-                        startDate="2022"
-                        endDate="2022"
-                        title="Project 1"
-                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor."
-                        href="https://www.google.com"
-                        techs={[]}
-                    />
-                </li>
+
+
+
             </ul>
         </div>
     );
