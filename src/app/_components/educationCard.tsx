@@ -18,7 +18,7 @@ interface EducationItemProps {
     return (
       <div className="mb-14">
         <div className="flex items-baseline">
-          <h3 className="text-2xl font-bold">{name}</h3>
+          <h3 className="text-xl font-bold">{name}</h3>
           <span className="ml-4 text-gray-400">{type}</span>
         </div>
         <div className="mt-2 flex items-center text-sm text-gray-400">

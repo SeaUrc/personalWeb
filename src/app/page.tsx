@@ -9,7 +9,7 @@ export default function HomePage() {
   return (
     <div>
       <div className="hidden aspect-ratio-wide:block">
-        <div className="mx-auto max-w-7xl min-h-screen font-mono">
+        <div className="mx-auto max-w-6xl min-h-screen font-mono">
           <main className="flex">
             <div className="ml-5 w-1/2 bg-black">
               <WideNav />
@@ -34,21 +34,23 @@ export default function HomePage() {
           </main>
         </div>
       </div>
+
+
       <div className="hidden aspect-ratio-tall:block">
-        <div className="mx-auto max-w-7xl min-h-screen font-mono">
+        <div className="mx-auto max-w-6xl min-h-screen font-mono">
           <main className="flex">
             <div className="w-full m-5">
               <TallNav />
               <section id="about">
                 <div className="width-full px-5">
-                  <p className="text-2xl font-bold text-white mb-6">
+                  <p className="text-2xl font-bold text-white mb-4">
                     About
                   </p>
                   <About />
                 </div>
               </section>
               <section id="projects">
-                <p className="text-2xl font-bold text-white pt-24 pb-12 p-5">
+                <p className="text-2xl font-bold text-white pt-24 mb-4 pl-5">
                   Projects
                 </p>
                 <div className="width-full">
@@ -56,10 +58,10 @@ export default function HomePage() {
                 </div>
               </section>
               <section id="education">
-                <p className="pl-5 text-2xl font-bold text-white">
+                <p className="pl-5 mb-4 pt-12 text-2xl font-bold text-white">
                   Education
                 </p>
-                <div className="width-full py-12 px-5">
+                <div className="width-full px-5">
                   <Education />
                 </div>
               </section>
