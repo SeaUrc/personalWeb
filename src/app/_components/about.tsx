@@ -1,6 +1,6 @@
 export default function About() {
     return (
-        <div>
+        <div className="text-sm">
             <p className="">
                 Back in 2018, I took Andrew Ng's machine learning course.
                 I was fascinated by the idea of using a computer to learn and generalize from data.

@@ -21,11 +21,11 @@ export default function HomePage() {
                 </div>
               </section>
               <section id="projects">
-                <div className="width-full py-24">
+                <div className="width-full py-24 -translate-y-10">
                   <Projects />
                 </div>
               </section>
-              <section id="education">
+              <section id="education" className="-translate-y-24">
                 <div className="width-full py-24 px-5">
                   <Education />
                 </div>

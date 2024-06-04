@@ -44,16 +44,16 @@ export default function WideNav() {
   return (
     <header className="sticky top-0 py-24 flex flex-col h-screen">
       <div className="flex-grow">
-        <h1 className="text-6xl font-bold text-white">
+        <h1 className="text-5xl font-bold text-white">
           <a href="/">Nicholas Song</a>
         </h1>
-        <h2 className="text-3xl font-bold text-white mt-3">
+        <h2 className="text-2xl font-bold text-white mt-3">
           Software Developer
         </h2>
-        <p className="mt-4 w-[22rem]">High schooler who's interested in web development and machine learning</p>
+        <p className="text-sm mt-4 w-[22rem]">High schooler who's interested in web development and machine learning</p>
         {/* Add additional header content here */}
         <nav className="">
-          <ul className="mt-16 w-max flex flex-col items-start">
+          <ul className="mt-16 w-max flex flex-col items-start text-sm">
             <li
               className="py-2 relative left-8"
               onMouseEnter={() => setHoverSection("about")}

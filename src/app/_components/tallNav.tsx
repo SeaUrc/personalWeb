@@ -7,13 +7,13 @@ export default function TallNav() {
     return (
       <header className="py-24 flex flex-col px-5">
         <div className="flex-grow">
-          <h1 className="text-6xl font-bold text-white">
+          <h1 className="text-5xl font-bold text-white">
             <a href="/">Nicholas Song</a>
           </h1>
-          <h2 className="text-3xl font-bold text-white mt-4">
+          <h2 className="text-2xl font-bold text-white mt-4">
             Software Developer
           </h2>
-          <p className="mt-4 w-[22rem]">High schooler who's interested in web development and machine learning</p>
+          <p className="text-sm mt-4 w-[22rem]">High schooler who's interested in web development and machine learning</p>
         </div>
         <ul className="flex w-48 justify-between mt-8">
           <li>

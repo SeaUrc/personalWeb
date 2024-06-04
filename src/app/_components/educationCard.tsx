@@ -21,7 +21,7 @@ interface EducationItemProps {
           <h3 className="text-2xl font-bold">{name}</h3>
           <span className="ml-4 text-gray-400">{type}</span>
         </div>
-        <div className="mt-2 flex items-center text-gray-400">
+        <div className="mt-2 flex items-center text-sm text-gray-400">
           <span>{duration}</span>
           <span className="mx-2">•</span>
           <span>{location}</span>
@@ -34,10 +34,10 @@ interface EducationItemProps {
         </div>
         {keyClasses && keyClasses.length > 0 && (
           <div className="mt-4">
-            <h4 className="text-lg font-semibold mb-2">Key Classes:</h4>
+            <h4 className="text-base font-semibold mb-2">Key Classes:</h4>
             <ul className="grid grid-cols-2 gap-2">
               {keyClasses.map((cls, index) => (
-                <li key={index} className="bg-gray-300 rounded-lg px-3 py-2 text-sm text-black">
+                <li key={index} className="bg-gray-300 rounded-lg px-3 py-2 text-xs text-black">
                   {cls}
                 </li>
               ))}

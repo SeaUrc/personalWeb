@@ -3,7 +3,7 @@ import ProjectCard from "./projectCard";
 export default function Projects() {
     return (
         <div>
-            <ul className="-translate-y-10">
+            <ul className="">
                 <li>
                     <ProjectCard
                         startDate="2022"
@@ -21,7 +21,7 @@ export default function Projects() {
                         title="Personal Website"
                         description="The website your currently on. Made with Next and Tailwind. Hosted on Vercel and Github Pages."
                         href="https://seaurc.github.io/"
-                        techs={["Nextjs", "Tailwind", "Typescript"]}
+                        techs={["Nextjs", "Tailwind", "Typescript", "Vercel"]}
                     />
                 </li> 
                 <li>
