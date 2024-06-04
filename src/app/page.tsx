@@ -16,12 +16,12 @@ export default function HomePage() {
             </div>
             <div className="w-1/2">
               <section id="about">
-                <div className="width-full min-h-[45vh] py-24 px-5">
+                <div className="width-full min-h-[45vh] pt-24 px-5">
                   <About />
                 </div>
               </section>
               <section id="projects">
-                <div className="width-full py-24 -translate-y-10">
+                <div className="width-full pt-24 pb-10 -translate-y-10">
                   <Projects />
                 </div>
               </section>

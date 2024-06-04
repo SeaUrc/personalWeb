@@ -9,7 +9,7 @@ export default function Projects() {
                         startDate="2022"
                         endDate="Present"
                         title="WebRobot"
-                        description="Doing research in program synthesis and web automation. Migrated existing WebRobot to MV3. Added additional capability for multiple windows. (Links to paper before I was handed project)."
+                        description="Doing research at University of Michigan in program synthesis and web automation. Migrated existing WebRobot to MV3. Added additional capability for multiple windows. (Links to paper published before I was handed project)."
                         href="https://web.eecs.umich.edu/~xwangsd/pubs/pldi22.pdf"
                         techs={["React", "Typescript", "Chrome Web Extensions"]}
                     />
