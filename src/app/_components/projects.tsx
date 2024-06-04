@@ -21,7 +21,7 @@ export default function Projects() {
                         title="Personal Website"
                         description="The website your currently on. Made with Next and Tailwind. Hosted on Vercel and Github Pages."
                         href="https://seaurc.github.io/"
-                        techs={["Nextjs", "Tailwind", "Typescript", "Vercel"]}
+                        techs={["Nextjs", "Tailwind", "Vercel", "Github Actions"]}
                     />
                 </li> 
                 <li>
