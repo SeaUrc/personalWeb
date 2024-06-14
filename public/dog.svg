@@ -1,0 +1,11 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60">
+	<title>dog-paw-svgrepo-com-svg</title>
+	<defs>
+		<image  width="53" height="51" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAAzAgMAAABK0aj+AAAAAXNSR0IB2cksfwAAAAlQTFRFAAAA////AwEEb/bIcAAAAAN0Uk5TAP8AaVI5rAAAAQpJREFUeJyt0UFqwzAQBdA/FC3qbdEpcoRA630KdYkEuVMu0F27LEgL9QT1JqfxEQxJv0aKY4IbumggiV8cz4zmCwDTDT38mHgpfNt2TOIQMpsPfovjPY/jbkbbKk8R8Hz6iqa7MGBOO/zG3P/PvF1qoe80lXl1oc68+o5iWz5XTjQgkGbdK10kPcwmme4U5SVhIGUbbYvAX5Xcir5YbU42UPKvy8yNbtF0JMf2JJsrdcvK+2e94tgBd5/SbGCfeMR85Ic3afZ9ydKu+i2P//6V4yXXh0dNUJPlMmqghQy8MC9rRq2EKf3KGje08IWhHL+u/UxxUwoLhJ/y/SdeVSbF6cd5Zm56THnmH/EN2HQrBRpPAAAAAElFTkSuQmCC"/>
+	</defs>
+	<style>
+	</style>
+	<g id="Layer">
+		<use id="Layer" href="#img1" x="3" y="3"/>
+	</g>
+</svg>

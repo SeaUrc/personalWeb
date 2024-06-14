@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Image from "next/image";
+import Link from 'next/link';
 
 export default function WideNav() {
 
@@ -106,41 +107,58 @@ export default function WideNav() {
           </ul>
         </nav>
       </div>
-      <ul className="flex w-48 justify-between mb-6">
-        <li>
-          <a href="https://github.com/SeaUrc" target="_blank" rel="noopener noreferrer" className="group text-gray-400 hover:text-white transition-colors duration-300">
-            <Image
-              src="/github-mark-white.svg"
-              alt="GitHub Logo"
-              width={24}
-              height={24}
-              className="w-8 h-8 opacity-70 transition-all duration-300 group-hover:opacity-100"
-            />
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/nicholas-song-1601251b1/" target="_blank" rel="noopener noreferrer" className="group text-gray-400 hover:text-white transition-colors duration-300">
-            <Image
-              src="/icons8-linkedin.svg"
-              alt="LinkedIn Logo"
-              width={24}
-              height={24}
-              className="w-8 h-8 opacity-70 transition-all duration-300 group-hover:opacity-100"
-            />
-          </a>
-        </li>
-        <li>
-          <a href="mailto:nicksong03@gmail.com" target="_blank" rel="noopener noreferrer" className="group text-gray-400 hover:text-white transition-colors duration-300">
-            <Image
-              src="/Gmail_Logo_White.svg"
-              alt="Instagram Logo"
-              width={24}
-              height={24}
-              className="w-8 h-8 opacity-70 transition-all duration-300 group-hover:opacity-100"
-            />
-          </a>
-        </li>
-      </ul>
+      <div>
+        <ul className="flex w-72  justify-between mb-6">
+          <li>
+            <a href="https://github.com/SeaUrc" target="_blank" rel="noopener noreferrer" className="group text-gray-400 hover:text-white transition-colors duration-300">
+              <Image
+                src="/github-mark-white.svg"
+                alt="GitHub Logo"
+                width={24}
+                height={24}
+                className="w-8 h-8 opacity-70 transition-all duration-300 group-hover:opacity-100"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/nicholas-song-1601251b1/" target="_blank" rel="noopener noreferrer" className="group text-gray-400 hover:text-white transition-colors duration-300">
+              <Image
+                src="/icons8-linkedin.svg"
+                alt="LinkedIn Logo"
+                width={24}
+                height={24}
+                className="w-8 h-8 opacity-70 transition-all duration-300 group-hover:opacity-100"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="mailto:nicksong03@gmail.com" target="_blank" rel="noopener noreferrer" className="group text-gray-400 hover:text-white transition-colors duration-300">
+              <Image
+                src="/Gmail_Logo_White.svg"
+                alt="Instagram Logo"
+                width={24}
+                height={24}
+                className="w-8 h-8 opacity-70 transition-all duration-300 group-hover:opacity-100"
+              />
+            </a>
+          </li>
+          <li className="w-1 bg-gray-400">
+          </li>
+          <li>
+              <Link
+                href="/lucas"
+              >
+                <Image
+                  src="/dog.svg"
+                  alt="My Dog"
+                  width={24}
+                  height={24}
+                  className="w-8 h-8 opacity-70 transition-all duration-300 group-hover:opacity-100"
+                />
+              </Link>
+          </li>
+        </ul>
+      </div>
     </header>
   );
 }
