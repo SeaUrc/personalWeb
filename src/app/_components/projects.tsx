@@ -20,7 +20,7 @@ export default function Projects() {
                         endDate="2024"
                         title="Personal Website"
                         description="The website your currently on. Made with Next and Tailwind. Hosted on Vercel and Github Pages."
-                        href="https://seaurc.github.io/"
+                        href="https://sea-urc-github-io.vercel.app/"
                         techs={["Nextjs", "Tailwind", "Drizzle", "Vercel", "Github Actions"]}
                     />
                 </li> 
