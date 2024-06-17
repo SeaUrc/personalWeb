@@ -108,7 +108,7 @@ export default function WideNav() {
         </nav>
       </div>
       <div>
-        <ul className="flex w-72  justify-between mb-6">
+        <ul className="flex w-72 justify-between mb-6">
           <li>
             <a href="https://github.com/SeaUrc" target="_blank" rel="noopener noreferrer" className="group text-gray-400 hover:text-white transition-colors duration-300">
               <Image

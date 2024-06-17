@@ -2,8 +2,18 @@ import { headers } from 'next/headers';
 import { db } from '~/server/db';
 import PostModal from '../_components/postModal';
 import Image from 'next/image';
+import Link from 'next/link';
+import { desc } from 'drizzle-orm';
 
 export const dynamic = 'force-dynamic';
+
+type Post = {
+    id: number,
+    url: string,
+    description: string,
+    takenAt: Date,
+    date: Date,
+}
 
 export default async function About() {
     let picInd: number = 0;
@@ -24,6 +34,7 @@ export default async function About() {
         "https://utfs.io/f/6d95190a-eaf5-4c75-a4f4-e084e2823393-4ey4fd.jpeg",
         "https://utfs.io/f/788e5359-ac32-48f9-afd3-4959d47940f2-32eg8h.jpeg"
     ]
+
     const getFormattedDate = (date: Date | undefined) => {
         if (!(date instanceof Date) || isNaN(date.getTime())) {
             return "Invalid Date";
@@ -36,35 +47,69 @@ export default async function About() {
         return `${month}/${day}/${year}`;
     }
 
-    return (
-        <div className="flex flex-col">
-            <div>
-                <h1>
-                    My dog lucas
-                </h1>
-            </div>
-            <div className="grid grid-cols-4 gap-6">
-                {posts.map((post, ind) => {
-                    return (
-                        <div key={ind} className="flex flex-col justify-center items-center w-full h-full">
-                            <div className="aspect-square">
-                                <img src={post} alt={"My dog"} className="object-contain w-full h-full"></img>
-                            </div>
-                            <div className="flex flex-row justify-between w-full">
-                                <div>
-                                    temporary description
-                                </div>
-                                <div>
-                                    {
-                                        getFormattedDate(new Date(2023, 5, 15))
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                    )
-                })}
+    const groupIntoYears = (posts: Post[]) => {
+        const groupedByYear = posts.reduce((acc, curr) => {
+            const year = curr.date.getFullYear();
+            if (!acc[year]) {
+              acc[year] = [];
+            }
+            acc[year]!.push(curr);
+            return acc;
+          }, {} as Record<number, Post[]>);
+          
+          const groupedArray = Object.entries(groupedByYear)
+            .map(([year, items]) => ({
+              year: parseInt(year),
+              items: items.sort((a, b) => a.date.getTime() - b.date.getTime()),
+            }));
+    }
 
-                {/* <div className="flex flex-col w-5/6 h-1/2">
+    return (
+        <div className="flex justify-center">
+            <div className="flex flex-col mx-10 font-mono max-w-6xl min-h-screen">
+                <div className="mt-24 mb-20">
+                    <div className="flex flex-row justify-between w-full">
+                        <h1 className="text-5xl font-bold">
+                            Lucas's Page
+                        </h1>
+                        <Link href="/">
+                            <Image
+                                src="/home.svg"
+                                alt="home button"
+                                className="w-8 h-8 opacity-70 transition-all duration-300 hover:opacity-100"
+                                width={30}
+                                height={30}
+                            />
+                        </Link>
+
+                    </div>
+                    <h2 className="mt-8 text-lg max-w-[60rem]">
+                        Lucas is a mini golden doodle. He's 7 years old and his birthday is on the 1st of June.
+                        He loves to play frisbee, go on car rides, and steal your shoes.
+                    </h2>
+                </div>
+                <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-8 ">
+                    {posts.map((post, ind) => {
+                        return (
+                            <div key={ind} className="flex flex-col justify-center items-center w-full h-full">
+                                <div className="aspect-square">
+                                    <img src={post} alt={"My dog"} className="object-contain w-full h-full"></img>
+                                </div>
+                                <div className="flex flex-col w-full">
+                                    <div>
+                                        temporary description
+                                    </div>
+                                    <div>
+                                        {
+                                            getFormattedDate(new Date(2023, 5, 15))
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    })}
+
+                    {/* <div className="flex flex-col w-5/6 h-1/2">
                     <div className="flex justify-center items-center w-full border-2 border-white h-[80vh]">
                         <img className="object-contain max-h-full max-w-full" src={posts[picInd]?.url} alt="dog" />
                     </div>
@@ -86,10 +131,11 @@ export default async function About() {
                         );
                     })}
                 </div> */}
-            </div>
-            {/* {posts.map((post) => (
+                </div>
+                {/* {posts.map((post) => (
                 <PostModal post={post}/>
             ))} */}
+            </div>
         </div>
     )
 }
