@@ -2,12 +2,14 @@
 // https://orm.drizzle.team/docs/sql-schema-declaration
 
 import { sql } from "drizzle-orm";
+import { int } from "drizzle-orm/mysql-core";
 import {
   index,
   pgTableCreator,
   serial,
   timestamp,
   varchar,
+  integer
 } from "drizzle-orm/pg-core";
 
 /**
@@ -27,6 +29,7 @@ export const posts = createTable(
     takenAt: timestamp("taken_at", { withTimezone: true }).notNull(),
     createdAt: timestamp("created_at", { withTimezone: true })
       .default(sql`CURRENT_TIMESTAMP`),
+    likes: integer("likes").default(0),
   },
   (example) => ({
     nameIndex: index("name_idx").on(example.url),
