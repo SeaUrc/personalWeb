@@ -7,8 +7,6 @@ import { desc } from 'drizzle-orm';
 import LikeButton from '../_components/likeButton';
 import { group } from 'console';
 
-export const dynamic = 'force-dynamic';
-
 type Post = {
     id: number;
     url: string;
