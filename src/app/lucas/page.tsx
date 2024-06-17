@@ -1,4 +1,3 @@
-import { headers } from 'next/headers';
 import { db } from '~/server/db';
 import PostModal from '../_components/postModal';
 import Image from 'next/image';
@@ -19,7 +18,6 @@ type Post = {
 export default async function About() {
     let picInd: number = 0;
 
-    headers();
     const posts = await db.query.posts.findMany({
         orderBy: (model, { desc }) => desc(model.takenAt),
     });
