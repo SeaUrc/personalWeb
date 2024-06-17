@@ -153,7 +153,7 @@ export default function WideNav() {
                   alt="My Dog"
                   width={24}
                   height={24}
-                  className="w-8 h-8 opacity-70 transition-all duration-300 group-hover:opacity-100"
+                  className="w-[1.85rem] h-[1.85rem] opacity-70 transition-all duration-300 group-hover:opacity-100"
                 />
               </Link>
           </li>

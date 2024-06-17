@@ -2,6 +2,7 @@
 
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function TallNav() {
     return (
@@ -15,7 +16,7 @@ export default function TallNav() {
           </h2>
           <p className="text-sm mt-4 w-[22rem]">High schooler who's interested in web development and machine learning</p>
         </div>
-        <ul className="flex w-48 justify-between mt-8">
+        <ul className="flex w-72 justify-between mt-8">
           <li>
             <a href="https://github.com/SeaUrc" target="_blank" rel="noopener noreferrer" className="group text-gray-400 hover:text-white transition-colors duration-300">
               <Image
@@ -48,6 +49,21 @@ export default function TallNav() {
                 className="w-8 h-8 opacity-70 transition-all duration-300 group-hover:opacity-100"
               />
             </a>
+          </li>
+          <li className="w-1 bg-gray-400">
+          </li>
+          <li>
+              <Link
+                href="/lucas"
+              >
+                <Image
+                  src="/dog.svg"
+                  alt="My Dog"
+                  width={24}
+                  height={24}
+                  className="w-[1.85rem] h-[1.85rem] opacity-70 transition-all duration-300 group-hover:opacity-100"
+                />
+              </Link>
           </li>
         </ul>
       </header>
