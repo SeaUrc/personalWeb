@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { desc } from 'drizzle-orm';
 import LikeButton from '../_components/likeButton';
 import { group } from 'console';
+import { Suspense } from 'react';
+import Fallback from './_components/fallback';
 
 type Post = {
     id: number;
@@ -93,7 +95,7 @@ export default async function About() {
                         He loves to play frisbee, go on car rides, and steal your shoes.
                     </h2>
                 </div>
-                
+                <Suspense fallback={<Fallback/>}>
                     {
                         formmattedPosts.map((posts, ind) => {
                             return (
@@ -128,6 +130,7 @@ export default async function About() {
                             );
                         })
                     }
+                </Suspense>
             </div>
         </div>
     )

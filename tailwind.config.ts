@@ -11,6 +11,15 @@ export default {
       screens: {
         'aspect-ratio-wide': {'raw': '(min-aspect-ratio: 1/1)'},
         'aspect-ratio-tall': {'raw': '(max-aspect-ratio: 1/1)'},
+      },
+      animation: {
+        slide: 'slide 2.5s linear infinite',
+      },
+      keyframes: {
+        slide: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(150%)' },
+        }
       }
     },
   },

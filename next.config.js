@@ -13,7 +13,7 @@ const config = {
     eslint: {
         ignoreDuringBuilds: true,
     },
-    output: 'export',
+    // output: 'export',
     reactStrictMode: true,
     env: {
         POSTGRES_URL: process.env.POSTGRES_URL,
