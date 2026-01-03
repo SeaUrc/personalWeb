@@ -22,8 +22,8 @@ interface EducationItemProps {
           <span className="ml-4 text-gray-400">{type}</span>
         </div>
         <div className="mt-2 flex items-center text-sm text-gray-400">
-          <span>{duration}</span>
-          <span className="mx-2">•</span>
+          {/*<span>{duration}</span>*/}
+          {/*<span className="mx-2">•</span>*/}
           <span>{location}</span>
           {gpa && (
             <>

@@ -51,7 +51,7 @@ export default function WideNav() {
         <h2 className="text-2xl font-bold text-white mt-3">
           Software Developer
         </h2>
-        <p className="text-sm mt-4 w-[22rem]">High schooler who's interested in web development and machine learning</p>
+        <p className="text-sm mt-4 w-[22rem]">University student who's interested in systems & machine learning</p>
         {/* Add additional header content here */}
         <nav className="">
           <ul className="mt-16 w-max flex flex-col items-start text-sm">

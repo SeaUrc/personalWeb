@@ -6,12 +6,40 @@ export default function Projects() {
             <ul className="">
                 <li>
                     <ProjectCard
+                        startDate="2025"
+                        endDate="2026"
+                        title="Cerebrium"
+                        description="Developing AI pipelines involving model orchestration, inference optimization, and deployment of agentic workflows"
+                        techs={["Python", "Pytorch", "Unsloth","Pydantic"]}
+                    />
+                </li>
+                <li>
+                    <ProjectCard
+                        startDate="2025"
+                        endDate="2025"
+                        title="OPhO"
+                        description="Worked on the Online Physics Olympiad as a web developer"
+                        href="https://opho.physoly.tech/"
+                        techs={["Sanic", "PostgreSQL", "Python"]}
+                    />
+                </li>
+                <li>
+                    <ProjectCard
                         startDate="2022"
-                        endDate="Present"
+                        endDate="2025"
                         title="WebRobot"
-                        description="Doing research at University of Michigan in program synthesis and web automation. Migrated existing WebRobot to MV3. Added additional capability for multiple windows. (Links to paper published before I was handed project)."
+                        description="Researched at University of Michigan under Prof. Xinyu Wang in program synthesis and web automation. Migrated existing WebRobot to MV3. Added additional capability for multiple windows. (Links to paper published before I was handed project)."
                         href="https://web.eecs.umich.edu/~xwangsd/pubs/pldi22.pdf"
                         techs={["React", "Typescript", "Chrome Web Extensions"]}
+                    />
+                </li>
+                <li>
+                    <ProjectCard
+                        startDate="2024"
+                        endDate="2024"
+                        title="DFT Visualizer"
+                        description="Built a C++ application for interactive 2D DFT visualization using epicycles generated from frequency components"
+                        techs={["C++17", "SFML 2.6", "Multi-threading"]}
                     />
                 </li>
                 <li>
